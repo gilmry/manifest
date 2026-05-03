@@ -2,7 +2,7 @@
 
 *Une pratique du logiciel sobre, durable et transmissible*
 
-**Par Farah et Gilles Maury — Bruxelles, version 0.9 de travail**
+**Par Farah et Gilles Maury — Bruxelles, version 0.10 de travail**
 
 ---
 
@@ -12,7 +12,7 @@ Ce document est une **version de travail** rassemblant l'ensemble des sections r
 
 Le manifeste est volontairement structuré de façon explicite. Cette transparence architecturale n'est pas un choix esthétique — elle est cohérente avec un principe que nous défendons : un système qui rend visibles ses propres responsabilités est plus juste qu'un système qui les dissimule. Nous l'appliquons à l'architecture logicielle et nous nous l'appliquons à nous-mêmes.
 
-**Changements de la version 0.9 par rapport à la 0.8 :** rédaction complète de la section 6 conclusive. Le manifeste est désormais destiné à devenir le README d'un dépôt GitHub épinglé à `github.com/gilmry/manifest`, et la section 6 est rédigée dans un format adapté à cette destination — clôture pratique plutôt qu'essai conclusif littéraire. Cinq sous-sections : invitation non-doctrinaire, mode de contribution via GitHub, liens consolidés vers les projets, licences et caractère vivant du document, clôture sobre. Les annexes A à E restent à rédiger ultérieurement comme fichiers séparés du dépôt. Le manifeste est désormais structurellement complet — toutes les sections du corps sont rédigées.
+**Changements de la version 0.10 par rapport à la 0.9 :** ajout des fichiers de gouvernance du dépôt annoncés en section 6 — `LICENSE` (présentation française de la licence CC BY-SA 4.0 couvrant le manifeste, le document compagnon `Methode-Maury.md` et les annexes documentaires à venir), `CONTRIBUTING.md` (guide de contribution aligné sur la sous-section 6.2), `CODE_OF_CONDUCT.md` (Contributor Covenant 2.1 en français, personnalisé), `GLOSSAIRE.md` (première annexe documentaire publiée, environ soixante termes techniques, méthodologiques, juridiques et conceptuels) et deux templates d'issues GitHub pour les modes `correction` et `discussion`. Mise à jour cohérente des sous-sections 6.3 et 6.4 du manifeste pour refléter ces ajouts. Aucun changement de fond sur le corps du manifeste — la version 0.10 consolide l'infrastructure documentaire autour d'un texte qui reste celui de la 0.9.
 
 ---
 
@@ -1081,6 +1081,15 @@ Pour faciliter la navigation, voici les liens vers tout ce que ce manifeste évo
 - Dépôt : [`github.com/gilmry/manifest`](https://github.com/gilmry/manifest)
 - Issues et discussions : sur le dépôt ci-dessus
 - Suivi de version : section dédiée plus haut dans ce document
+- Document compagnon (prompts BMAD, templates, coefficients de vélocité IA, estimations) : [`Methode-Maury.md`](Methode-Maury.md)
+
+**Gouvernance du dépôt**
+- Licence : [`LICENSE`](LICENSE)
+- Guide de contribution : [`CONTRIBUTING.md`](CONTRIBUTING.md)
+- Code de conduite : [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)
+
+**Annexes documentaires déjà publiées**
+- Glossaire des termes techniques, méthodologiques, juridiques et conceptuels : [`GLOSSAIRE.md`](GLOSSAIRE.md)
 
 **Les projets présentés en section 5**
 - KoproGo (copropriété belge) : [`github.com/gilmry/koprogo`](https://github.com/gilmry/koprogo)
@@ -1095,7 +1104,7 @@ Pour les références bibliographiques précises de chacune des sources mobilis�
 
 **Le code** des projets KoproGo et BANKO est publié sous licence **AGPL-3.0**. Cette licence-vaccin garantit que toute amélioration ou utilisation en service en ligne devra elle-même être publiée sous la même licence, ce qui propage les libertés du logiciel libre dans toutes les œuvres dérivées.
 
-**Le texte du manifeste** est publié sous licence **Creative Commons Attribution-ShareAge 4.0 (CC-BY-SA 4.0)**. Vous pouvez le copier, le distribuer, le traduire, l'adapter, le modifier — y compris pour un usage commercial — à condition de citer son origine et de partager vos versions dérivées sous la même licence. Cette licence est cohérente avec notre invitation : reprenez ce qui vous sert, à condition que vos propres reprises restent disponibles pour d'autres.
+**Le texte du manifeste, ainsi que le document compagnon `Methode-Maury.md` et toutes les annexes documentaires (.md) publiées dans ce dépôt**, sont publiés sous licence **Creative Commons Attribution-ShareAlike 4.0 (CC-BY-SA 4.0)**. Vous pouvez les copier, les distribuer, les traduire, les adapter, les modifier — y compris pour un usage commercial — à condition de citer leur origine et de partager vos versions dérivées sous la même licence. Cette licence est cohérente avec notre invitation : reprenez ce qui vous sert, à condition que vos propres reprises restent disponibles pour d'autres. Le détail de la licence figure dans le fichier [`LICENSE`](LICENSE) à la racine du dépôt.
 
 **Le manifeste est un document vivant.** Il évoluera. Il se trompera parfois. Il se corrigera. Le suivi de version inclus plus haut dans ce document permet à un lecteur d'identifier précisément ce qui a changé entre deux versions, et donc de tracer la maturation de notre pensée sur la durée. Les versions précédentes restent accessibles via l'historique Git du dépôt — rien n'est effacé, tout est archivé, conformément à ce que nous disons en sous-section 4.5.5 sur la responsabilité transgénérationnelle qui s'applique aussi aux textes que nous écrivons.
 
@@ -1115,7 +1124,7 @@ Les annexes mentionnées en début de manifeste seront publiées comme fichiers 
 
 Annexes prévues :
 
-- **GLOSSAIRE.md** — Glossaire technique et conceptuel : DDD, TDD, BDD, hexagonal, ASBL, AGPL-3.0, et autres termes techniques ou belges qui peuvent être inconnus du lecteur.
+- **GLOSSAIRE.md** *(publié — version 0.10)* — Glossaire technique et conceptuel : DDD, TDD, BDD, hexagonal, ASBL, AGPL-3.0, et autres termes techniques ou belges qui peuvent être inconnus du lecteur, ainsi que les concepts philosophiques mobilisés en section 2 (ubuntu, sumak kawsay, sept générations, mottainai, Cantique des créatures, écologie des savoirs, épistémicide).
 - **BIBLIOGRAPHIE.md** — Bibliographie commentée des sources mobilisées en section 2 : références bibliographiques précises pour Mogobe Ramose, Boaventura de Sousa Santos, le Manifeste Agile, le mouvement Software Craftsmanship, le mouvement du logiciel libre, et les autres traditions citées.
 - **MAPPING_ISO_27001.md** — Mapping entre les pratiques de sécurité de KoproGo et BANKO et les contrôles ISO 27001, pour les RSSI qui voudraient évaluer la conformité du dispositif.
 - **ESTIMATION_PROJET_TYPE.md** — Estimation chiffrée pour un projet type qui voudrait reprendre la Méthode Maury : ordres de grandeur de durée, de coût, de ressources humaines nécessaires selon la complexité du domaine visé.
@@ -1136,6 +1145,7 @@ Annexes prévues :
 | 0.7 | [À DATER] | Farah & Gilles Maury | Rédaction complète de la section 2 sur les sources philosophiques. Présentation en huit sous-sections des cinq sagesses du monde (Ubuntu avec Mogobe Ramose, sumak kawsay avec ses ancrages constitutionnels équatorien et bolivien, sept générations Haudenosaunee avec la Grande Loi de la Paix, mottainai japonais, Cantique des créatures de François d'Assise), de Boaventura de Sousa Santos comme partenaire de pensée contemporain (épistémicide, cinq monocultures et cinq écologies, sociologie des absences et émergences), et des cinq traditions de résistance internes au logiciel (Manifeste Agile 2001, Software Craftsmanship, mouvement du logiciel libre stallmanien, commons numériques européens avec Framasoft et NLnet, tradition open source européenne plus large). Précaution liminaire sur le risque d'extractivisme épistémique. Sous-section conclusive sur l'articulation des trois familles de sources. Voix neutre que Farah et Gilles pourront retravailler ensemble. |
 | 0.8 | [À DATER] | Farah & Gilles Maury | Rédaction complète de la section 5 sur les projets concrets, avec présentation factuelle de KoproGo (jalon 0, v0.1.0 dans les cartons, dix heures par semaine, dépôt GitHub, chaîne YouTube, métriques publiques vérifiables, dispositif de revue de code croisée par quatre IA) et de BANKO (early stage en progression douce, cinq heures par semaine, dépôt GitHub, posture explicite de proposition technique offerte à une partenaire fintech). EcoleHub retiré pour le moment car en suspens et plus open source, avec mention dans la note préliminaire et dans une note de clôture. Précision rétroactive ajoutée dans la sous-section 4.1.6 explicitant que la capacité au sens TOGAF intègre dimensions techniques, organisationnelles, écologiques et d'écosystème — ce qui éclaire le paradoxe apparent entre l'avancement du code et le franchissement officiel de jalons, paradoxe ensuite illustré concrètement dans la présentation de KoproGo. |
 | 0.9 | [À DATER] | Farah & Gilles Maury | Rédaction complète de la section 6 conclusive en cinq sous-sections : invitation non-doctrinaire, modes de contribution via GitHub uniquement (issues, PR, discussions), liens consolidés vers les dépôts et la chaîne YouTube, licences (AGPL-3.0 pour le code, CC-BY-SA 4.0 pour le texte) et caractère vivant du document, clôture sobre en écho au préambule. Stub des annexes A à E remplacé par une mention indiquant qu'elles seront publiées comme fichiers séparés du dépôt à mesure de leur rédaction. Le manifeste est désormais structurellement complet — toutes les sections du corps sont rédigées et seul le travail des annexes reste optionnel pour des versions ultérieures. Destination du document confirmée : README du dépôt `github.com/gilmry/manifest`. |
+| 0.10 | [À DATER] | Farah & Gilles Maury | Ajout des fichiers de gouvernance du dépôt annoncés en section 6 : `LICENSE` (présentation française de CC BY-SA 4.0 couvrant le manifeste, le document compagnon `Methode-Maury.md` et les annexes documentaires à venir, avec note explicite renvoyant le code applicatif des projets vers leurs propres dépôts sous AGPL-3.0 et anticipation d'un éventuel `LICENSE-CODE` séparé), `CONTRIBUTING.md` (guide de contribution aligné sur la sous-section 6.2 — quatre modes : correction, discussion, PR, GitHub Discussion — avec posture explicite « pas d'adresse email » et engagement d'attribution publique des contributions intégrées), `CODE_OF_CONDUCT.md` (texte officiel du Contributor Covenant 2.1 en français, sans modification du texte canonique, avec personnalisation du canal de signalement vers une issue ou discussion privée GitHub plutôt qu'une adresse email, et désignation de Farah et Gilles Maury comme responsables d'application). Première annexe documentaire publiée : `GLOSSAIRE.md` rassemblant une soixantaine de termes techniques (DDD, TDD, BDD, SOLID, hexagonal, YAGNI, DRY, ADR, RFC, IaC, CI/CD, PR, Cargo workspace, Bounded Context), méthodologiques (Agile, BMAD, Scrum, Nexus, SAFe essentiel, ITIL, TOGAF, gate review), juridiques belges (ASBL, Code civil belge articles 3.84 et suivants, conseil de copropriété, PCMN, quorum, majorité qualifiée, tantième, syndic), de licences (AGPL-3.0, CC BY-SA 4.0) et de concepts philosophiques (Ubuntu, sumak kawsay, sept générations, mottainai, Cantique des créatures, Boaventura de Sousa Santos, écologie des savoirs, épistémicide). Deux templates d'issues GitHub ajoutés dans `.github/ISSUE_TEMPLATE/` (correction.md et discussion.md). Mise à jour cohérente des sous-sections 6.3 (ajout des liens vers la gouvernance et le glossaire) et 6.4 (extension explicite de la portée de la licence CC BY-SA aux documents compagnons et aux annexes, correction d'une coquille « ShareAge » → « ShareAlike »). Aucun changement de fond sur le corps du manifeste. |
 
 ---
 
