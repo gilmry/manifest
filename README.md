@@ -2,7 +2,7 @@
 
 *Une pratique du logiciel sobre, durable et transmissible*
 
-**Par Farah et Gilles Maury — Bruxelles, version 0.10 de travail**
+**Par Farah et Gilles Maury — Bruxelles, version 0.11 de travail**
 
 ---
 
@@ -12,7 +12,7 @@ Ce document est une **version de travail** rassemblant l'ensemble des sections r
 
 Le manifeste est volontairement structuré de façon explicite. Cette transparence architecturale n'est pas un choix esthétique — elle est cohérente avec un principe que nous défendons : un système qui rend visibles ses propres responsabilités est plus juste qu'un système qui les dissimule. Nous l'appliquons à l'architecture logicielle et nous nous l'appliquons à nous-mêmes.
 
-**Changements de la version 0.10 par rapport à la 0.9 :** ajout des fichiers de gouvernance du dépôt annoncés en section 6 — `LICENSE` (présentation française de la licence CC BY-SA 4.0 couvrant le manifeste, le document compagnon `Methode-Maury.md` et les annexes documentaires à venir), `CONTRIBUTING.md` (guide de contribution aligné sur la sous-section 6.2), `CODE_OF_CONDUCT.md` (Contributor Covenant 2.1 en français, personnalisé), `GLOSSAIRE.md` (première annexe documentaire publiée, environ soixante termes techniques, méthodologiques, juridiques et conceptuels) et deux templates d'issues GitHub pour les modes `correction` et `discussion`. Mise à jour cohérente des sous-sections 6.3 et 6.4 du manifeste pour refléter ces ajouts. Aucun changement de fond sur le corps du manifeste — la version 0.10 consolide l'infrastructure documentaire autour d'un texte qui reste celui de la 0.9.
+**Changements de la version 0.11 par rapport à la 0.10 :** intégration de six leçons philosophiques issues du dogfooding de Foyer sur OpenMajor (projet troisième contexte, ni KoproGo ni BANKO). Le skill `contrat-api.md` né d'un incident réel (testing report NO-GO, juillet 2026) a révélé que la méthode elle-même avait des gaps non identifiés sur KoproGo et BANKO. Changements : (1) Conviction 2 raffinée — « l'outil objective, l'humain décide » — la validation humaine sans outil d'objectivation est un rituel, pas un mécanisme ; (2) Conviction 7 nuancée — deux rythmes d'itération : code (itérer peu) vs méthode (itérer beaucoup, prior→mesuré) ; (3) Section 4.4.9 enrichie — le danger « assez fiable pour qu'on cesse de vérifier » s'applique à la méthode elle-même ; (4) Section 6.4 réécrite — le « document vivant » passe de la déclaration d'intention au mécanisme (meta-grain de la Boucle de rétroaction, ADR méthodologique) ; (5) Section 2.7 enrichie — le ShareAlike comme principe Ubuntu appliqué au savoir méthodologique, pas seulement obligation juridique ; (6) Boucle de rétroaction (Foyer) — meta-grain ajouté : la méthode elle-même devient l'artefact évalué. Approche patch : le corps du manifeste 0.10 est conservé, les leçons sont intégrées par ajout ciblédans les sections existantes, pas par réécriture. Le choix de l'approche patch est cohérent avec le principe même du dogfooding : on ne réécrit pas un texte qui tient pour le corriger — on le patche là où la pratique a révélé un gap, et on trace le motif dans le changelog. **Changements de la version 0.10 par rapport à la 0.9 :** ajout des fichiers de gouvernance du dépôt annoncés en section 6 — `LICENSE` (présentation française de la licence CC BY-SA 4.0 couvrant le manifeste, le document compagnon `Methode-Maury.md` et les annexes documentaires à venir), `CONTRIBUTING.md` (guide de contribution aligné sur la sous-section 6.2), `CODE_OF_CONDUCT.md` (Contributor Covenant 2.1 en français, personnalisé), `GLOSSAIRE.md` (première annexe documentaire publiée, environ soixante termes techniques, méthodologiques, juridiques et conceptuels) et deux templates d'issues GitHub pour les modes `correction` et `discussion`. Mise à jour cohérente des sous-sections 6.3 et 6.4 du manifeste pour refléter ces ajouts. Aucun changement de fond sur le corps du manifeste — la version 0.10 consolide l'infrastructure documentaire autour d'un texte qui reste celui de la 0.9.
 
 ---
 
@@ -181,7 +181,7 @@ Notre dernière famille de sources rassemble des traditions qui ont préservé, 
 
 **Le mouvement Software Craftsmanship.** Lancé en 2009 par un groupe de développeurs autour de Robert C. Martin (auteur de *Clean Code*) avec le *Manifesto for Software Craftsmanship*, ce mouvement complète le Manifeste Agile en insistant sur la qualité technique du code lui-même. Là où l'agilité originelle parlait de processus humain, le craftsmanship parle de **dignité du métier** — un développeur n'est pas un fournisseur de fonctionnalités, c'est un artisan qui porte une responsabilité envers ceux qui hériteront de son travail. Le mouvement promeut les pratiques de TDD, de refactoring continu, de revue de code par les pairs, et défend l'idée qu'un développeur a le devoir professionnel de refuser de livrer du code de mauvaise qualité même si le client ou la hiérarchie l'exigent. Cette posture éthique du métier nous est essentielle.
 
-**Le mouvement du logiciel libre.** Fondé en 1983 par Richard Stallman avec le projet GNU et la création de la Free Software Foundation en 1985, le mouvement du logiciel libre a énoncé que le logiciel, parce qu'il structure désormais une part croissante de la vie humaine, doit respecter quatre libertés fondamentales — exécuter le programme pour tout usage, étudier son fonctionnement et l'adapter à ses besoins, redistribuer des copies, améliorer le programme et publier les améliorations. La GPL et plus tard l'AGPL, licences que Stallman a promues, sont conçues comme des **licences-vaccins** qui propagent ces libertés à toutes les œuvres dérivées. Nous publions tous nos projets — KoproGo, BANKO, EcoleHub — sous AGPL-3.0, et nous nous reconnaissons dans la filiation politique du mouvement du logiciel libre, même si notre vocabulaire diffère parfois de celui de Stallman.
+**Le mouvement du logiciel libre.** Fondé en 1983 par Richard Stallman avec le projet GNU et la création de la Free Software Foundation en 1985, le mouvement du logiciel libre a énoncé que le logiciel, parce qu'il structure désormais une part croissante de la vie humaine, doit respecter quatre libertés fondamentales — exécuter le programme pour tout usage, étudier son fonctionnement et l'adapter à ses besoins, redistribuer des copies, améliorer le programme et publier les améliorations. La GPL et plus tard l'AGPL, licences que Stallman a promues, sont conçues comme des **licences-vaccins** qui propagent ces libertés à toutes les œuvres dérivées. Nous publions tous nos projets — KoproGo, BANKO, EcoleHub — sous AGPL-3.0, et nous nous reconnaissons dans la filiation politique du mouvement du logiciel libre, même si notre vocabulaire diffère parfois de celui de Stallman. **Le ShareAlike comme principe éthique.** La clause ShareAlike de la CC BY-SA (qui couvre le texte du manifeste) et de l'AGPL (qui couvre le code) n'est pas seulement une obligation juridique — c'est l'expression du principe Ubuntu appliquée au savoir. *« Une méthode existe par et à travers ceux qui l'utilisent. »* Sans restitution des améliorations, c'est une extraction de savoir sans retour — l'inverse de l'écologie des savoirs que nous défendons. Foyer, en tant que dérivé du manifeste, porte cette obligation : les innovations qu'il découvre par la pratique doivent remonter au manifeste.
 
 **Les commons numériques européens.** Une tradition plus diffuse rassemble des associations et fondations européennes qui défendent les **biens communs numériques** comme alternative aux plateformes extractivistes américaines. Framasoft en France, avec son projet *Dégooglisons Internet* et la suite Framacloud, a démontré qu'on pouvait offrir des alternatives libres et hébergées en Europe à la plupart des services Google. La Fondation NLnet aux Pays-Bas finance depuis des décennies des projets de logiciels libres d'intérêt public — du protocole SMTP à des outils contemporains de souveraineté numérique. La Fondation Wikimedia, bien que d'origine américaine, est largement soutenue en Europe et incarne l'idée d'un savoir partagé comme bien commun. Cette tradition européenne nous parle parce qu'elle articule la défense du logiciel libre avec une conscience explicite des enjeux de souveraineté politique, de protection des données personnelles et de durabilité écologique.
 
@@ -213,11 +213,11 @@ Le numérique consomme énormément parce qu'il jette en permanence. Refaire, mi
 
 ## Conviction 2 — L'intelligence artificielle génère, l'humain valide
 
-Nous utilisons des agents IA tous les jours. Ils accélèrent considérablement notre travail. Mais ils n'ont pas de jugement métier, pas de sens des invariants, pas de responsabilité juridique. Toute production d'un agent IA passe par une validation humaine impitoyable avant d'être intégrée. Cette règle ne souffre aucune exception. Elle est ce qui distingue une utilisation respectueuse de l'IA d'une délégation dangereuse.
+Nous utilisons des agents IA tous les jours. Ils accélèrent considérablement notre travail. Mais ils n'ont pas de jugement métier, pas de sens des invariants, pas de responsabilité juridique. Toute production d'un agent IA passe par une validation humaine impitoyable avant d'être intégrée. Cette règle ne souffre aucune exception. Elle est ce qui distingue une utilisation respectueuse de l'IA d'une délégation dangereuse — et c'est une force, pas une contrainte. **Précision acquise par la pratique de Foyer sur OpenMajor :** la validation humaine n'est pas suffisante en elle-même — elle doit être informée par un outil qui objective. Un test qui passe, une CI verte, un contrat vérifié. Sans outil, la validation est un rituel. Avec, c'est un mécanisme.
 
 ## Conviction 3 — Les communautés concrètes méritent des outils faits pour elles
 
-Une copropriété belge n'est pas un département d'une multinationale américaine. Une école d'Evere n'est pas une école californienne. Une banque tunisienne n'est pas une banque suisse. Les ERP globaux trahissent ces communautés en leur imposant des modèles étrangers. Nous construisons des outils qui partent du contexte local et qui parlent la langue du métier réel.
+Une copropriété belge n'est pas un département d'une multinationale américaine. Une école d'Evere n'est pas une école californienne. Une banque tunisienne n'est pas une banque suisse. Les ERP globaux trahissent ces communautés en leur imposant des modèles étrangers. Nous construisons des outils qui partent du contexte local et qui parlent la langue du métier réel. L'écologie des savoirs ne s'applique pas seulement aux sagesses du monde — elle s'applique aussi aux méthodes de production. Un projet stateless n'a pas les mêmes besoins qu'un projet full-stack. Reconnaître cette diversité, c'est refuser la monoculture méthodologique autant que la monoculture du savoir.
 
 ## Conviction 4 — La transparence du code est une condition de la confiance
 
@@ -233,11 +233,17 @@ Le software craftsmanship n'est pas une posture esthète. C'est la conviction qu
 
 ## Conviction 7 — Faire bien du premier coup en itérant peu, c'est aussi écologique
 
-Chaque appel à un modèle d'IA consomme. Chaque cycle de développement raté gaspille. Chaque migration coûte. Nous cherchons donc à formuler nos besoins clairement, à construire nos prompts avec soin, à valider chaque étape avant la suivante. Ce n'est pas un retour au Waterfall — c'est une agilité responsable, qui respecte les ressources humaines et matérielles qu'elle mobilise.
+Chaque appel à un modèle d'IA consomme. Chaque cycle de développement raté gaspille. Chaque migration coûte. Nous cherchons donc à formuler nos besoins clairement, à construire nos prompts avec soin, à valider chaque étape avant la suivante. Ce n'est pas un retour au Waterfall — c'est une agilité responsable, qui respecte les ressources humaines et matérielles qu'elle mobilise. **Précision acquise par la pratique de Foyer :** ce principe s'applique au code. La méthode elle-même suit un rythme inverse — elle se découvre par l'usage et s'affine en itérant. Ce qui était un prior devient du mesuré, ce qui était du mesuré resserre le prochain prior. Deux rythmes, même discipline.
+
+## Conviction 8 — Programmer à plusieurs, c'est investir dans la transmission et le miroir
+
+Le temps qu'un binôme ou un trio consacre au pair ou mob programming n'est pas une dépense à raboter — c'est un investissement. Un senior en pair avec un médior et un junior, c'est de la transmission humaine pure et de l'objectivation : le savoir se diffuse au lieu de s'enfermer dans une seule tête, la chaîne de responsabilité double, et le *bus factor 1* se dissout. L'autre présent est aussi un miroir — il voit ce que l'on ne voit pas, il challenge les hypothèses, il est le garde-fou contre le danger « assez fiable pour qu'on cesse de vérifier ».
+
+L'IA probabiliste qui génère facilement du code est précisément ce qui nous donne le budget wall-clock pour investir dans ces processus humains. Sans cet arbitrage — accepter le coût supplémentaire en temps humain pour fiabiliser, transmettre et former — l'IA n'est pas intégrée comme opportunité mais comme danger de dette technique et de deskilling. Plus que jamais, former les juniors est une responsabilité : c'est multiplier les regards capables de vérifier, pas seulement de consommer. Face à un agent IA, c'est plus vrai encore : un superviseur unique est un *bus factor 1* sur le répondre-de lui-même.
 
 ---
 
-Ces sept convictions tiennent ensemble. Elles forment un système. On peut en discuter chacune, mais on les comprend mieux les unes par les autres.
+Ces huit convictions tiennent ensemble. Elles forment un système. On peut en discuter chacune, mais on les comprend mieux les unes par les autres.
 
 ---
 
@@ -252,7 +258,7 @@ Cette section raconte cette double émergence et la convergence qui en a résult
 - **4.1** raconte la naissance de **KoproGo** dans une logique ascendante : nous sommes partis du droit belge concret et de problèmes vécus, et nous avons remonté la chaîne jusqu'à découvrir une architecture, puis une méthode, puis une thèse.
 - **4.2** raconte la naissance de **BANKO** dans une logique descendante : forts de l'expérience KoproGo, nous avons cette fois posé les principes d'abord et descendu jusqu'au code.
 - **4.3** examine **la convergence** des deux récits sur les mêmes invariants architecturaux, couche par couche, et tire de cette convergence sa portée philosophique.
-- **4.4** présente le **pipeline complet** TOGAF → BMAD → Scrum → Nexus → SAFe → ITIL et la place de l'intelligence artificielle supervisée dans ce pipeline.
+- **4.4** présente le **pipeline complet** TOGAF → BMAD → Scrum → Nexus → SAFe → ITIL et la place de l'intelligence artificielle supervisée dans ce pipeline, puis expose les **huit concepts opérationnels** découverts par la pratique de Foyer sur OpenMajor et remontés dans le manifeste : la Boucle de rétroaction comme primitive unificatrice (4.4.11), les archétypes de composant (4.4.12), les trois anneaux d'enforcement (4.4.13), les garde-fous L0-L2 (4.4.14), l'abaque coût et capacité (4.4.15), l'adoption et la priorisation (4.4.16), l'arbitrage hybride (4.4.17), le contrat API matérialisé (4.4.18).
 - **4.5** propose une **réflexion conclusive** sur les invariants qui rendent la convergence possible et sur ce que cette double trajectoire nous enseigne.
 
 L'organisation explicite de cette section — elle-même reflet de l'architecture explicite que nous prônons — est délibérée. Un manifeste qui défend la transparence des structures doit lui-même rendre visible la sienne.
@@ -792,6 +798,8 @@ L'IA **ne porte aucune responsabilité finale** à aucune échelle. Pas dans les
 
 C'est cette articulation — accélération de la mise en forme, explicitation des pratiques tacites, responsabilité humaine intégrale — qui distingue la Méthode Maury d'une utilisation paresseuse de l'IA. Toute organisation qui voudrait reprendre la méthode doit accepter ces trois conditions ensemble. Aucune ne suffit seule, et aucune n'est négociable.
 
+**Le danger au niveau de la méthode.** Ce danger — *« assez fiable pour qu'on cesse de vérifier »* — s'applique aussi à la méthode elle-même, pas seulement au code généré par l'IA. Quand la Méthode Maury a fonctionné sur KoproGo et BANKO, le risque est réel qu'on cesse de la vérifier sur les projets suivants. C'est précisément à ce moment-là qu'il faut la vérifier. Foyer, appliqué sur OpenMajor (troisième contexte, ni KoproGo ni BANKO), a révélé des gaps que les deux premiers projets n'avaient pas exposés : un contrat API non matérialisé, un drift DTO silencieux, deux bugs bloquants. La méthode était *« assez fiable pour qu'on ait envie de cesser de la vérifier »* — et c'est en la vérifiant qu'on a découvert ces gaps.
+
 ### 4.4.10 — L'humain a le dernier mot, et il a aussi le premier
 
 Une dernière clarification mérite d'être posée explicitement, parce qu'elle est souvent mal comprise. Quand nous disons que l'humain valide ce que l'IA produit, on pourrait croire que l'humain n'intervient qu'en aval, après que l'IA a généré quelque chose. C'est faux.
@@ -802,9 +810,93 @@ C'est ici que la Méthode Maury rejoint la **frugalité de prompt** que nous avo
 
 Nous voudrions que la Méthode Maury contribue à formaliser cette compétence et à la rendre transmissible. C'est l'une des raisons pour lesquelles nous écrivons ce manifeste.
 
-### 4.4.11 — Bilan du pipeline et pont vers la sous-section 4.5
+---
+
+### 4.4.11 — La Boucle de rétroaction : la primitive unificatrice
+
+**Foyer sur OpenMajor a révélé que tout le pipeline — du cycle TDD au CSI ITIL, en passant par les gate reviews TOGAF — obéit à la même forme.** Un cercle en cinq temps :
+
+> **Conception → Construction → Résultat → Évaluation → Amélioration → (Conception…)**
+
+Ce qui change d'un grain à l'autre, ce n'est pas la forme mais **l'outil qui objective** à l'Évaluation : une suite de tests pour le cycle dev, un scanneur statique pour les gates, l'état observé pour l'IaC, l'usage réel pour l'adoption. La forme reste la même. C'est ce qu'on appelle l'**auto-similarité** : le même motif se répète à différentes échelles.
+
+**Ce que cela change philosophiquement.** La méthode n'est plus un ensemble de cadres juxtaposés (TOGAF, Scrum, SAFe, ITIL) — elle est **un seul cercle qui monte**. Le cycle dev rouge/vert/bleu est la même forme que le sprint Scrum, qui est la même forme que le PI Planning SAFe, qui est la même forme que le CSI ITIL. L'unité de travail n'est pas la story mais le **tour de cercle** — ce qui permet de comparer l'effort entre des terrains a priori incomparables (infrastructure vs code métier) en utilisant la même maille d'estimation.
+
+**Le meta-grain.** La spirale ne s'arrête pas à l'architecture. La méthode elle-même est un artefact qui doit être évalué et amélioré. Sans ce meta-grain, la méthode devient un texte figé — une dette textuelle que personne ne maintient, exactement l'erreur que nous décrivons en section 1.2. C'est ce que Foyer a découvert : quand un skill opérationnel naît d'un incident réel (comme le skill `contrat-api.md` né du testing report NO-GO d'OpenMajor), il révèle un gap que le manifeste ne connaissait pas. La méthode se découvre par la pratique et s'affine en itérant — c'est le rythme inverse de celui du code (conviction n°7).
+
+**La condition de sortie.** Un cercle ne s'arrête pas seul. On referme **tant que l'Évaluation réfute** ; on sort **quand elle ne réfute plus**. Avant toute sortie sur un choix irréversible, **l'humain valide**.
+
+### 4.4.12 — Les archétypes : refuser la monoculture méthodologique
+
+**Un projet stateless n'a pas les mêmes besoins qu'un projet stateful. Un projet API-first n'a pas les mêmes besoins qu'un projet full-stack.** Cette évidence pratique a été absente de la Méthode Maury jusqu'à ce que Foyer la formule.
+
+**Ce que cela change philosophiquement.** C'est l'application à la méthode elle-même de l'écologie des savoirs que nous défendons en section 2.6. Boaventura de Sousa Santos nomme la **monoculture du savoir scientifique rigoureux** : un système qui ne reconnaît comme légitime qu'un seul mode de pensée et qui produit comme non-existence tout ce qui n'y entre pas. Appliqué à la méthodologie, cela donne le piège inverse : une méthode unique imposée à tous les projets, qui produit des artefacts inutiles et des procédures lourdes pour des projets qui n'en ont pas besoin.
+
+**Quatre archétypes, deux facettes.** La facette *état* (stateless / stateful) dit si le système possède un état persisté. La facette *surface* (API-first / full-stack) dit si le contrat est le produit ou s'il existe un frontend. Les combinaisons — stateless API-first, stateful API-first, stateful full-stack — conditionnent quelles couches sont en scope et quelles sections de chaque livrable s'appliquent. Un contexte gonflé dégrade l'agent ; un projet qui n'instancie que ce qui est réel gagne en clarté.
+
+### 4.4.13 — Les trois anneaux d'enforcement : ce qui contraint vraiment
+
+**Un blocage qui s'exécute dans le runtime de l'agent est nécessaire mais contournable. Le seul enforcement dont on répond est celui que l'agent ne peut pas atteindre.**
+
+**Ce que cela change philosophiquement.** La conviction n°2 dit que l'humain valide. Mais *où* se place cette validation ? Foyer a découvert qu'il y a trois anneaux, du plus proche au plus éloigné de l'agent :
+
+- **Anneau 1 (permissions)** — le confort et la défense en profondeur : règles déclaratives sur chaque outil (`allow` / `ask` / `deny`).
+- **Anneau 2 (plugin)** — le blocage calculé : inspecter la commande réelle et lever une erreur si les gates ne sont pas vertes.
+- **Anneau 3 (substrat)** — la garantie : hooks Git, CI, protection de branche, sandbox. Hors de portée de l'agent et de ses sous-agents. C'est ici que vit l'enforcement dont on *répond*.
+
+**La règle de placement.** Tout point irréversible — push vers la branche-vérité, migration de schéma, choix de tier — doit vivre en anneau 3. Les permissions font le confort ; la protection de branche et la CI font la garantie. « La parade est l'architecture, pas le contrat. »
+
+### 4.4.14 — Les garde-fous : rendre la méthode mécanique
+
+**Sans contraintes mécaniques, la méthode reste une intention.** Foyer a formalisé trois niveaux de garde-fous qui transforment les principes en système de production reproductible.
+
+**Ce que cela change philosophiquement.** La conviction n°6 dit que le travail bien fait est une dignité. Mais la dignité ne suffit pas — il faut des garde-fous qui empêchent de sauter les étapes par confort. Trois niveaux :
+
+- **L0 (contexte propre)** — un contexte gonflé dégrade l'agent ; le garder minimal est un invariant.
+- **L1 (sécurité runtime)** — permissions sur les actions irréversibles, secrets protégés, hooks qui bloquent les actions dangereuses.
+- **L2 (discipline validation)** — quatre classes de tests obligatoires (`@happy`, `@negative`, `@edge`, `@security`), pas de code sans test rouge écrit avant, merge sur la branche-vérité signé par l'humain.
+
+Ces garde-fous ne sont pas une liste de bonnes pratiques — ce sont les **contraintes mécaniques** qui rendent la primitive fiable. Sans eux, l'agent va sauter les étapes par confort. Avec, la méthode devient un système.
+
+### 4.4.15 — L'abaque coût et capacité : mesurer avant de construire
+
+**Ce qui n'est pas mesuré ne peut pas être amélioré.** Cette phrase de la conviction n°1 s'applique aussi à l'anticipation : estimer le coût d'un logiciel avant de le construire, c'est poser une hypothèse falsifiable.
+
+**Ce que cela change philosophiquement.** Foyer a découvert que l'estimation n'est pas une intuition mais une boucle de rétroaction appliquée à l'anticipation. L'hypothèse de coût est la Conception. L'abaque (et le modèle de calcul) est l'Évaluation. Le recalage par la télémétrie réelle est l'Amélioration. Ce qui était un prior devient du mesuré, ce qui était du mesuré resserre le prochain prior.
+
+**La discipline du `[caler]`.** Tout chiffre qui n'est pas encore mesuré est marqué `[caler]` — un prior à remplacer par du mesuré dès qu'on a tourné un projet. Cette discipline rend l'estimation *answerable* : on distingue toujours mesuré (réel) de supposé (à confirmer). On ne survend jamais une précision que les données ne portent pas.
+
+### 4.4.16 — L'adoption : l'usage réel comme dernière condition de la capacité
+
+**Une fonctionnalité codée n'est pas une capacité disponible.** Cette phrase de la sous-section 4.1.6 mérite d'être poussée plus loin : la dernière condition de la capacité, c'est que l'usage réel en valide la pertinence.
+
+**Ce que cela change philosophiquement.** Foyer a découvert que l'usage réel est un outil d'évaluation à part entière — au même titre que les tests, les gates, ou l'état observé. Un code « fini » ne prouve pas que la capacité est disponible. L'usage réel prouve que la capacité est pertinente.
+
+**RACE et RICE.** L'adoption se mesure par quatre signaux : Reach (l'audience touchée), Act (la première interaction), Adopt (l'usage réel et récurrent), Engage (la rétention). La priorisation se fait par RICE : Reach × Impact × Confidence ÷ Effort. *Confidence* vient du CSI (mesure réelle, pas intuition). *Effort* vient de l'estimation en tours de cercle. C'est ainsi que l'usage referme la spirale vers une nouvelle conception.
+
+### 4.4.17 — L'arbitrage hybride : louer le réversible, posséder l'irréversible
+
+**Cloud ou on-premise, propriétaire ou open source, IA souveraine ou API tierce — ce n'est pas quatre décisions séparées, c'est la même question sous quatre surfaces.**
+
+**Ce que cela change philosophiquement.** Foyer a découvert que tous les choix technologiques hybrides se réduisent à une grille de souveraineté sur trois étages : la résidence (où ça tourne), la souveraineté des données (qui peut contraindre l'accès), la souveraineté de capacité (puis-je inverser, substituer, reprendre la main). C'est le troisième étage — la réversibilité — qui est le plus souvent oublié.
+
+**La hiérarchie de veto.** On tranche dans l'ordre : altérité → réversibilité → érosion → coût. Si un tiers non consentant est affecté (RGPD, donnée d'autrui), c'est une contrainte qui prime tout. Si le choix est irréversible, on le possède plutôt que de le louer. Si on glisse vers « assez fiable pour qu'on cesse de vérifier », on recule. Le coût vient en dernier, jamais en premier.
+
+### 4.4.18 — Le contrat API matérialisé : un contrat décrit n'est pas un contrat
+
+**OpenMajor a découvert que décrire des conventions REST en prose ne suffit pas.** Un contrat décrit en prose est un vœu, pas un artefact. Il se délite route par route, silencieusement, jusqu'à casser un flux critique en production.
+
+**Ce que cela change philosophiquement.** C'est l'expression la plus concrète du danger « assez fiable pour qu'on cesse de vérifier » : une section PRD qui décrit des conventions plausibles, validée par le pipeline BMAD, et qui masque l'absence totale de mécanisme de synchronisation. Le contrat était *assez fiable pour qu'on ait envie de cesser de le vérifier* — et c'est en le vérifiant qu'on a découvert le drift.
+
+**Les quatre éléments.** Pour qu'un contrat soit réellement matérialisé, quatre éléments sont non optionnels : (1) annotation exhaustive à la source — le spec se génère depuis le code, jamais l'inverse ; (2) client frontend généré, jamais écrit à la main ; (3) désérialisation stricte — un champ inconnu déclenche une erreur explicite ; (4) tests contract en CI — le spec généré correspond au comportement réel. Les quatre ensemble ferment la boucle : ils empêchent d'oublier d'annoter, de dupliquer manuellement, de dériver silencieusement, et de régresser jusqu'au merge.
+
+---
+
+### 4.4.19 — Bilan du pipeline et pont vers la sous-section 4.5
 
 Cette sous-section a présenté in extenso le pipeline méthodologique de la Méthode Maury. Six cadres articulés, six échelles temporelles superposées, une discipline d'IA comme copilote responsable à toutes les étapes, et une exigence d'humanité intégrale à chacune.
+
+Huit concepts opérationnels y ont été ajoutés, découverts par la pratique de Foyer sur OpenMajor et remontés dans le manifeste : la Boucle de rétroaction comme primitive unificatrice, les archétypes de composant, les trois anneaux d'enforcement, les garde-fous L0-L2, l'abaque coût et capacité, l'adoption et la priorisation, l'arbitrage hybride, le contrat API matérialisé. Chacun de ces concepts est un principe philosophique — le « comment » opérationnel est documenté dans le document compagnon `Methode-Maury.md`.
 
 Ce que nous n'avons pas encore traité, c'est la question de fond : **pourquoi cet agencement précis tient-il, plutôt qu'un autre**. La sous-section 4.5, qui clôt la section 4, examinera cette question en mettant les sept invariants de qualité — SOLID, DDD, BDD, TDD, hexagonal, YAGNI, DRY — en correspondance avec les sagesses du monde présentées en section 2 du manifeste. Cette mise en correspondance révélera que la cohérence du pipeline n'est pas accidentelle : elle traduit en pratiques techniques des principes éthiques que des cultures très différentes ont chacune formulés à leur manière. C'est cette continuité entre éthique et technique qui fait la transmissibilité de la méthode.
 
@@ -1096,6 +1188,9 @@ Pour faciliter la navigation, voici les liens vers tout ce que ce manifeste évo
 - KoproGo, chaîne YouTube : [`youtube.com/@koprogo`](https://youtube.com/@koprogo)
 - BANKO (proposition technique fintech tunisienne) : [`github.com/gilmry/BANKO`](https://github.com/gilmry/BANKO)
 
+**Foyer — cadre d'agents dérivé**
+- Foyer (persona opérationnel portable) : [`github.com/gilmry/foyer`](https://github.com/gilmry/foyer)
+
 **Les sources citées en section 2**
 
 Pour les références bibliographiques précises de chacune des sources mobilisées — Mogobe Ramose, Boaventura de Sousa Santos, le Manifeste Agile original, le mouvement Software Craftsmanship, le mouvement du logiciel libre, et toutes les autres — une **bibliographie commentée** sera publiée dans une annexe séparée du dépôt. Cette annexe permettra à un lecteur d'aller lire les textes originaux sans dépendre de notre lecture.
@@ -1106,7 +1201,7 @@ Pour les références bibliographiques précises de chacune des sources mobilis�
 
 **Le texte du manifeste, ainsi que le document compagnon `Methode-Maury.md` et toutes les annexes documentaires (.md) publiées dans ce dépôt**, sont publiés sous licence **Creative Commons Attribution-ShareAlike 4.0 (CC-BY-SA 4.0)**. Vous pouvez les copier, les distribuer, les traduire, les adapter, les modifier — y compris pour un usage commercial — à condition de citer leur origine et de partager vos versions dérivées sous la même licence. Cette licence est cohérente avec notre invitation : reprenez ce qui vous sert, à condition que vos propres reprises restent disponibles pour d'autres. Le détail de la licence figure dans le fichier [`LICENSE`](LICENSE) à la racine du dépôt.
 
-**Le manifeste est un document vivant.** Il évoluera. Il se trompera parfois. Il se corrigera. Le suivi de version inclus plus haut dans ce document permet à un lecteur d'identifier précisément ce qui a changé entre deux versions, et donc de tracer la maturation de notre pensée sur la durée. Les versions précédentes restent accessibles via l'historique Git du dépôt — rien n'est effacé, tout est archivé, conformément à ce que nous disons en sous-section 4.5.5 sur la responsabilité transgénérationnelle qui s'applique aussi aux textes que nous écrivons.
+**Le manifeste est un document vivant.** Il évoluera. Il se trompera parfois. Il se corrigera. La version 0.11 instaure le mécanisme qui manquait : la boucle de rétroaction de Foyer inclut désormais un **meta-grain** — la méthode elle-même est l'artefact évalué et amélioré, pas seulement le code. Trois signaux ouvrent la boucle : (1) un skill Foyer né d'un incident opérationnel révèle un gap du manifeste ; (2) un concept Foyer absent du manifeste doit être partagé (ShareAlike) ; (3) un prior du manifeste est remplacé par du mesuré. Chaque modification du manifeste est tracée dans un **ADR méthodologique** (`manifest/adr/`) et versionnée dans [`CHANGELOG.md`](CHANGELOG.md). Le suivi de version inclus plus haut dans ce document permet à un lecteur d'identifier précisément ce qui a changé entre deux versions, et donc de tracer la maturation de notre pensée sur la durée. Les versions précédentes restent accessibles via l'historique Git du dépôt — rien n'est effacé, tout est archivé, conformément à ce que nous disons en sous-section 4.5.5 sur la responsabilité transgénérationnelle qui s'applique aussi aux textes que nous écrivons.
 
 Les **annexes** mentionnées en début de manifeste — glossaire technique, bibliographie commentée, mapping ISO 27001, estimation chiffrée d'un projet type, FAQ — seront publiées comme **fichiers séparés** du dépôt à mesure de leur rédaction. Elles ne font pas partie de ce README et leur absence ne le rend pas incomplet. Elles sont des compléments documentaires destinés à des lecteurs spécifiques — un débutant pour le glossaire, un chercheur pour la bibliographie, un RSSI pour le mapping ISO, un dirigeant d'ASBL pour l'estimation, un sceptique pour la FAQ. Quand elles existeront, elles seront liées depuis cette section.
 
@@ -1146,6 +1241,7 @@ Annexes prévues :
 | 0.8 | [À DATER] | Farah & Gilles Maury | Rédaction complète de la section 5 sur les projets concrets, avec présentation factuelle de KoproGo (jalon 0, v0.1.0 dans les cartons, dix heures par semaine, dépôt GitHub, chaîne YouTube, métriques publiques vérifiables, dispositif de revue de code croisée par quatre IA) et de BANKO (early stage en progression douce, cinq heures par semaine, dépôt GitHub, posture explicite de proposition technique offerte à une partenaire fintech). EcoleHub retiré pour le moment car en suspens et plus open source, avec mention dans la note préliminaire et dans une note de clôture. Précision rétroactive ajoutée dans la sous-section 4.1.6 explicitant que la capacité au sens TOGAF intègre dimensions techniques, organisationnelles, écologiques et d'écosystème — ce qui éclaire le paradoxe apparent entre l'avancement du code et le franchissement officiel de jalons, paradoxe ensuite illustré concrètement dans la présentation de KoproGo. |
 | 0.9 | [À DATER] | Farah & Gilles Maury | Rédaction complète de la section 6 conclusive en cinq sous-sections : invitation non-doctrinaire, modes de contribution via GitHub uniquement (issues, PR, discussions), liens consolidés vers les dépôts et la chaîne YouTube, licences (AGPL-3.0 pour le code, CC-BY-SA 4.0 pour le texte) et caractère vivant du document, clôture sobre en écho au préambule. Stub des annexes A à E remplacé par une mention indiquant qu'elles seront publiées comme fichiers séparés du dépôt à mesure de leur rédaction. Le manifeste est désormais structurellement complet — toutes les sections du corps sont rédigées et seul le travail des annexes reste optionnel pour des versions ultérieures. Destination du document confirmée : README du dépôt `github.com/gilmry/manifest`. |
 | 0.10 | [À DATER] | Farah & Gilles Maury | Ajout des fichiers de gouvernance du dépôt annoncés en section 6 : `LICENSE` (présentation française de CC BY-SA 4.0 couvrant le manifeste, le document compagnon `Methode-Maury.md` et les annexes documentaires à venir, avec note explicite renvoyant le code applicatif des projets vers leurs propres dépôts sous AGPL-3.0 et anticipation d'un éventuel `LICENSE-CODE` séparé), `CONTRIBUTING.md` (guide de contribution aligné sur la sous-section 6.2 — quatre modes : correction, discussion, PR, GitHub Discussion — avec posture explicite « pas d'adresse email » et engagement d'attribution publique des contributions intégrées), `CODE_OF_CONDUCT.md` (texte officiel du Contributor Covenant 2.1 en français, sans modification du texte canonique, avec personnalisation du canal de signalement vers une issue ou discussion privée GitHub plutôt qu'une adresse email, et désignation de Farah et Gilles Maury comme responsables d'application). Première annexe documentaire publiée : `GLOSSAIRE.md` rassemblant une soixantaine de termes techniques (DDD, TDD, BDD, SOLID, hexagonal, YAGNI, DRY, ADR, RFC, IaC, CI/CD, PR, Cargo workspace, Bounded Context), méthodologiques (Agile, BMAD, Scrum, Nexus, SAFe essentiel, ITIL, TOGAF, gate review), juridiques belges (ASBL, Code civil belge articles 3.84 et suivants, conseil de copropriété, PCMN, quorum, majorité qualifiée, tantième, syndic), de licences (AGPL-3.0, CC BY-SA 4.0) et de concepts philosophiques (Ubuntu, sumak kawsay, sept générations, mottainai, Cantique des créatures, Boaventura de Sousa Santos, écologie des savoirs, épistémicide). Deux templates d'issues GitHub ajoutés dans `.github/ISSUE_TEMPLATE/` (correction.md et discussion.md). Mise à jour cohérente des sous-sections 6.3 (ajout des liens vers la gouvernance et le glossaire) et 6.4 (extension explicite de la portée de la licence CC BY-SA aux documents compagnons et aux annexes, correction d'une coquille « ShareAge » → « ShareAlike »). Aucun changement de fond sur le corps du manifeste. |
+| 0.11 | 2026-07-11 | Farah & Gilles Maury | **Dogfooding Foyer sur OpenMajor — 6 leçons philosophiques intégrées.** Foyer, appliqué sur OpenMajor (troisième contexte, ni KoproGo ni BANKO), a révélé des gaps de la méthode que les deux premiers projets n'avaient pas exposés. Le skill `contrat-api.md` né d'un incident réel (testing report NO-GO, juillet 2026) a déclenché la remontée. Changements : Conviction 2 raffinée — « l'outil objective, l'humain décide » ; Conviction 7 nuancée — deux rythmes d'itération (code vs méthode) ; Section 4.4.9 enrichie — le danger « assez fiable pour qu'on cesse de vérifier » s'applique à la méthode elle-même ; Section 6.4 réécrite — le « document vivant » passe de la déclaration au mécanisme (meta-grain, ADR méthodologique) ; Section 2.7 enrichie — ShareAlike comme principe Ubuntu ; Foyer versionné 0.1, meta-grain ajouté à la Boucle de rétroaction. Approche patch : corps du manifeste conservé, leçons intégrées par ajout ciblé, motif tracé dans le changelog (`CHANGELOG.md` créé). ADR méthodologique tracé dans `adr/ADR-001-meta-grain-boucle-retroaction.md`. |
 
 ---
 

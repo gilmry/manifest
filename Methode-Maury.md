@@ -33,8 +33,9 @@ La Méthode Maury est un **écosystème méthodologique complet** qui couvre tou
 │                                                                      │
 │  FRAMEWORKS D'ORGANISATION (le "comment on s'organise")              │
 │  ═══════════════════════════════════════════════════════              │
-│  TOGAF → BMAD → Scrum → Nexus → SAFe → ITIL                        │
+│  Phase 0 (concepts) → TOGAF → BMAD → Scrum → Nexus → SAFe → ITIL   │
 │                                                                      │
+│  Phase 0  Concepts opérationnels (Boucle, archétypes, enforcement)  │
 │  TOGAF    Architecture d'entreprise (vision, stakeholders, ADM)      │
 │  BMAD     Agents IA spécialisés (Analyste, PM, Architecte, SM)      │
 │  Scrum    Développement itératif (sprints 2 semaines)                │
@@ -80,7 +81,7 @@ et les règles)                          tecturale)           co-authored:
                                                              claude
 ```
 
-L'IA génère, l'humain valide. Jamais l'inverse.
+L'IA génère, l'humain valide. Jamais l'inverse. **Précision acquise par Foyer :** la validation humaine n'est pas suffisante en elle-même — elle doit être informée par un outil qui objective. L'outil objective, l'humain décide.
 
 ## La vision : des "salariés virtuels" supervisés
 
@@ -192,6 +193,82 @@ Le module AG de KoproGo montre comment un **bounded context DDD entier** travers
 | **Tests** | Unit, Intégration, BDD (202 Gherkin), E2E, Load | TDD, dette zéro |
 | **CI/CD** | GitHub Actions | cargo audit, clippy, fmt, Tarpaulin |
 | **Licence** | AGPL-3.0 | Copyleft fort, transparence totale |
+
+---
+
+# PHASE 0 — Concepts opérationnels (découverts par Foyer)
+
+*Ces huit concepts sont les principes philosophiques du manifeste (§4.4.11 à 4.4.18) traduits en pratiques opérationnelles. Ils s'appliquent à tout projet qui utilise la Méthode Maury, quel que soit le domaine.*
+
+## 0.1 — La Boucle de rétroaction comme primitive
+
+Tout travail tourne sur le même cercle : **Conception → Construction → Résultat → Évaluation → Amélioration**. Ce qui change d'un terrain à l'autre, c'est l'outil qui objective à l'Évaluation.
+
+**Comment l'appliquer :**
+- **Cycle dev** — outil : tests pré-écrits. Rouge (BDD puis TDD, `@happy @negative @edge @security`, tout échoue) → Vert (code jusqu'au succès) → Bleu (refactor + quality gate ; puis e2e/intégration + security gate).
+- **Gates qualité & sécurité** — outil : analyseurs statiques, scanners.
+- **Convergence IaC** — outil : l'état observé (apply → re-apply stable).
+- **Adoption** — outil : doléances des issues + signaux RACE.
+
+**L'unité de travail est le tour de cercle.** Une story = *N* tours. Le coût d'un tour = tokens (coût modèle) + wall-clock (coût superviseur).
+
+**La story habilitante.** Sans outil pour objectiver, pas d'Évaluation, donc pas de cercle. Mettre en place ce qui permet de boucler (harnais de tests, quality/security gates, CI) est une story qui précède les stories métier. Sa forme aboutie : `git clone` + agent reconstruit tout.
+
+## 0.2 — Les archétypes de composant
+
+Avant de lancer le pipeline BMAD, déclarer l'archétype du projet. Deux facettes :
+
+- **Facette état** : stateless (pas d'état persisté) / stateful (état persisté, migrations, concurrence)
+- **Facette surface** : API-first (le contrat est le produit) / full-stack (front + back, sept couches)
+
+**Comment l'appliquer :** chaque persona BMAD lit l'archétype et n'inclus que les sections en scope. Un projet stateless ne produit pas de modèle de données ni de migrations. Un projet API-first produit le contrat OpenAPI comme livrable de premier rang.
+
+## 0.3 — Les trois anneaux d'enforcement
+
+| Anneau | Ce que c'est | Ce qu'il fait |
+|---|---|---|
+| 1 — Permissions | `opencode.json`, `AGENTS.md` | Confort, garde-fous courants |
+| 2 — Plugin | `tool.execute.before` | Gate calculée (commit sans tests, secret) |
+| 3 — Substrat | Hooks Git, CI, protection de branche | **Tout point irréversible** |
+
+**Règle de placement :** tout point irréversible (push branche-vérité, migration schéma, choix de tier) → anneau 3 obligatoire. Les permissions font le confort ; la protection de branche et la CI font la garantie.
+
+## 0.4 — Les garde-fous L0-L2
+
+- **L0 — Contexte propre** : `AGENTS.md` ≤ 5k tokens, pas de doublons, pas de bruit. Un contexte gonflé dégrade l'agent.
+- **L1 — Sécurité runtime** : `deny` sur les actions irréversibles (`git push`, `rm -rf`, `sudo`), `.gitleaks.toml` actif, hooks qui bloquent `secret-write` et `prod-action`.
+- **L2 — Discipline validation** : 4 classes de tests obligatoires (`@happy` + `@negative` + `@edge` + `@security`), pas de code sans test rouge écrit avant, merge sur `main` signé GO par l'humain.
+
+## 0.5 — L'abaque coût et capacité
+
+**Estimation :** `coût ≈ stories × tours/story × coût_tour(tokens) + (stories × jours/story ÷ ratio_supervision) × coût_pair_jour`.
+
+**Le poste dominant est le superviseur, pas le modèle.** Le `ratio_supervision` est le plafond répondre-de — au-delà, on ne peut plus répondre de ce qui est produit.
+
+**La discipline `[caler]` :** tout chiffre qui n'est pas encore mesuré est marqué `[caler]`. Tout `[caler]` est un prior à remplacer par du mesuré (`pg_stat_user_tables`, `docker stats`, facture cloud) dès qu'on a tourné un projet. On distingue toujours **mesuré** de **supposé**.
+
+## 0.6 — L'adoption et la priorisation
+
+**RACE** — objectiver l'usage : Reach (audience touchée) → Act (première interaction) → Adopt (usage réel et récurrent) → Engage (rétention et profondeur).
+
+**RICE / WSJF** — prioriser : RICE = Reach × Impact × Confidence ÷ Effort. *Confidence* ← le CSI (mesure réelle). *Effort* ← l'estimation en tours.
+
+## 0.7 — L'arbitrage hybride
+
+**Louer le réversible, posséder l'irréversible ; au doute, traiter comme irréversible.**
+
+**Hiérarchie de veto (lexicographique) :** altérité → réversibilité → érosion → coût. Un tiers non consentant affecté (RGPD, donnée d'autrui) prime tout. Le coût vient en dernier.
+
+**Dépendances :** une dépendance subie (héritée) se fait remonter. Une dépendance assumée (choisie) est pleinement imputable.
+
+## 0.8 — Le contrat API matérialisé
+
+Pour tout archétype full-stack (ou API-first), quatre éléments non optionnels dès le Sprint 0 :
+
+1. **Annotation exhaustive** — chaque route et DTO annotés pour que le spec se génère depuis le code, jamais l'inverse.
+2. **Client frontend généré** — codegen depuis le spec, jamais écrit à la main.
+3. **Désérialisation stricte** — `deny_unknown_fields` sur tous les DTO de body/query.
+4. **Tests contract en CI** — spec-sync + endpoints-exist, anneau 3.
 
 ---
 
@@ -1346,11 +1423,11 @@ Agents IA (surveillance 24/7)
 
 Les phases 1 à 4 décrivent le pipeline **linéaire** : de l'idée à la production. Mais un logiciel ne s'arrête pas au premier déploiement. La Méthode Maury est **cyclique** : chaque framework nourrit les autres en boucles de feedback continues. Les cérémonies agiles, le CSI d'ITIL et les revues TOGAF forment un système d'adaptation permanent.
 
-## Vue d'ensemble : les 3 boucles de feedback
+## Vue d'ensemble : les 4 boucles de feedback
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
-│              LES 3 BOUCLES DE LA MÉTHODE MAURY                       │
+│              LES 4 BOUCLES DE LA MÉTHODE MAURY                       │
 │                                                                       │
 │  BOUCLE 1 — Sprint (2 semaines)                                      │
 │  ════════════════════════════════                                     │
@@ -1373,13 +1450,20 @@ Les phases 1 à 4 décrivent le pipeline **linéaire** : de l'idée à la produc
 │  DDD :      évolution du modèle métier (nouveaux bounded contexts)  │
 │  ↻ Feedback : le système en production nourrit les prochains cycles │
 │                                                                       │
-│  ┌─────────┐     ┌─────────┐     ┌──────────┐                       │
-│  │ BOUCLE 1│────▶│ BOUCLE 2│────▶│ BOUCLE 3 │                       │
-│  │ Sprint  │     │   PI    │     │   CSI    │                        │
-│  │ 2 sem.  │     │ 8-12 sem│     │ Continu  │                       │
-│  └────┬────┘     └────┬────┘     └────┬─────┘                       │
-│       │               │               │                              │
-│       └───────────────┴───────────────┘                              │
+│  BOUCLE 4 — Méthode (meta-grain, déclenché par incident)             │
+│  ════════════════════════════════════════════════════════════════     │
+│  Foyer : skill né d'un incident → gap du manifeste identifié        │
+│  ADR :  décision méthodologique tracée, version incrémentée        │
+│  ShareAlike : innovations de Foyer remontent au manifeste          │
+│  ↻ Feedback : la méthode elle-même est améliorée par la pratique   │
+│                                                                       │
+│  ┌─────────┐     ┌─────────┐     ┌──────────┐     ┌──────────┐     │
+│  │ BOUCLE 1│────▶│ BOUCLE 2│────▶│ BOUCLE 3 │────▶│ BOUCLE 4 │     │
+│  │ Sprint  │     │   PI    │     │   CSI    │     │  Méthode │     │
+│  │ 2 sem.  │     │ 8-12 sem│     │ Continu  │     │ Incident │     │
+│  └────┬────┘     └────┬────┘     └────┬─────┘     └────┬─────┘     │
+│       │               │               │                 │            │
+│       └───────────────┴───────────────┴─────────────────┘            │
 │              ↻ Chaque boucle nourrit les autres                      │
 └──────────────────────────────────────────────────────────────────────┘
 ```
@@ -1725,6 +1809,7 @@ Phase 4 : ITIL + IaC
 | Ressource | Lien |
 |---|---|
 | KoproGo (référence d'exécution) | https://github.com/gilmry/koprogo |
+| Foyer (cadre d'agents portable) | https://github.com/gilmry/foyer |
 | Audit Engineering KoproGo | KoproGo_Engineering_Audit.pdf |
 | Analyses croisées 4 IA | Analyses_croisées_de_4_modèles.md |
 | Documentation BMAD | https://docs.bmad-method.org |
