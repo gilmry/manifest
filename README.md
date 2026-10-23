@@ -241,9 +241,13 @@ Le temps qu'un binôme ou un trio consacre au pair ou mob programming n'est pas 
 
 L'IA probabiliste qui génère facilement du code est précisément ce qui nous donne le budget wall-clock pour investir dans ces processus humains. Sans cet arbitrage — accepter le coût supplémentaire en temps humain pour fiabiliser, transmettre et former — l'IA n'est pas intégrée comme opportunité mais comme danger de dette technique et de deskilling. Plus que jamais, former les juniors est une responsabilité : c'est multiplier les regards capables de vérifier, pas seulement de consommer. Face à un agent IA, c'est plus vrai encore : un superviseur unique est un *bus factor 1* sur le répondre-de lui-même.
 
+## Conviction 9 — Un changement se conduit, il ne se décrète pas
+
+Une méthode imposée par une note de service produit de la conformité de façade : on coche les cases, on cesse de vérifier. Nous accompagnons chacun de la prise de conscience à la pratique, jusqu'à ce que le nouveau geste lui appartienne et tienne sans nous.
+
 ---
 
-Ces huit convictions tiennent ensemble. Elles forment un système. On peut en discuter chacune, mais on les comprend mieux les unes par les autres.
+Ces neuf convictions tiennent ensemble. Elles forment un système. On peut en discuter chacune, mais on les comprend mieux les unes par les autres.
 
 ---
 
