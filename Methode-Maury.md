@@ -1376,7 +1376,7 @@ Team → Scrum teams avec agents IA codant en TDD/BDD
 1. Agent IA détecte un besoin (alerte, vulnérabilité, scaling)
 2. Agent IA propose un changement IaC (PR automatique Git)
 3. CI vérifie (terraform plan, ansible-lint, conftest ISO 27001)
-4. HUMAIN review et approuve (Gilles, Saima, ou stagiaire formé)
+4. HUMAIN review et approuve (un architecte, un superviseur senior ou un stagiaire formé)
    └─ Point de contrôle humain OBLIGATOIRE
 5. Déploiement automatique (terraform apply, ansible, ArgoCD)
 6. Agent IA vérifie post-déploiement (health checks, smoke tests)
@@ -1396,17 +1396,17 @@ Team → Scrum teams avec agents IA codant en TDD/BDD
 | A.8.28 — Codage sécurisé | Rust memory-safe + SOLID | Ownership |
 | A.8.32 — Gestion changements | GitOps PR → Review → ArgoCD | Git |
 
-## Supervision quand Gilles & Farah sont en emploi salarié
+## Supervision quand les architectes sont en emploi salarié
 
 ```
 HEURES OUVRÉES                          HORS HEURES
 ──────────────                          ──────────
 
-Stagiaires AivaCore (formés)            Gilles/Farah supervisent
+Stagiaires formés                       Les architectes supervisent
   ├─ Surveillent dashboards              directement si nécessaire
   ├─ Traitent alertes niveau 1-2
-  ├─ Exécutent runbooks ITIL            Saima supervise les
-  ├─ Escaladent à Saima si niveau 3     stagiaires et valide
+  ├─ Exécutent runbooks ITIL            Un senior supervise les
+  ├─ Escaladent au senior si niveau 3   stagiaires et valide
   └─ JAMAIS d'apply sans validation     les changements IaC
 
 Agents IA (surveillance 24/7)
@@ -1617,7 +1617,7 @@ Le CSI est le moteur d'amélioration permanente. Il utilise le cycle de Deming (
 |---|---|---|
 | 1. Identifier la stratégie d'amélioration | Quels KPI surveiller ? (P99, uptime, CO₂/req, taux d'incidents) | Gilles + Client |
 | 2. Définir ce qu'on peut mesurer | Métriques Prometheus disponibles, logs Loki exploitables | Agent IA monitoring |
-| 3. Collecter les données | Dashboards Grafana, alertes Alertmanager, post-mortems | Agents IA + Stagiaires AivaCore |
+| 3. Collecter les données | Dashboards Grafana, alertes Alertmanager, post-mortems | Agents IA + stagiaires formés |
 | 4. Traiter les données | Agrégation, tendances, corrélations | Agent IA analyse |
 | 5. Analyser les données | Root cause analysis, identification patterns | Gilles + Agent IA |
 | 6. Présenter et utiliser l'information | Rapport CSI trimestriel au client, input pour PI Planning | Gilles |
@@ -1756,7 +1756,7 @@ La Méthode Maury n'est pas un pipeline qu'on exécute une fois. C'est un **syst
 - Le **CSI ITIL** est le moteur d'amélioration permanente qui ne s'arrête jamais
 - **TOGAF Phase H** est la porte d'entrée pour les changements architecturaux majeurs
 
-Le tout supervisé par des humains (Gilles, Farah, Saima, stagiaires formés) qui gardent toujours le dernier mot sur les agents IA.
+Le tout supervisé par des humains (les architectes, un superviseur senior, des stagiaires formés) qui gardent toujours le dernier mot sur les agents IA.
 
 ---
 
@@ -1776,7 +1776,7 @@ Phase 3 : Nexus → SAFe
   PI Planning + stratégie            Coordonnent les flux
 
 Phase 4 : ITIL + IaC
-  Utilise le produit                 Agents IA + stagiaires AivaCore
+  Utilise le produit                 Agents IA + stagiaires formés
                                      contrôlent, Gilles/Farah valident
 ```
 
